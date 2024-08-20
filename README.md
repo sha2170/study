@@ -2,8 +2,12 @@
 
 ### **📝 기초**
 
-* **Git과 Github**
-
+<details>
+  <summary><strong>Git과 Github</strong></summary>
+  
+  여기에 내용을 정리하세요.
+  
+</details>
 
 
 
