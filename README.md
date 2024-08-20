@@ -3,7 +3,7 @@
 ### **📝 기초**
 <details>
   <summary><h5><strong>Git과 Github</strong></h5></summary>
-
+  
   <small>
   **Git**
     - 버전 제어 시스템
@@ -105,10 +105,4 @@
     - main 브랜치를 originURL에 push, 기본 remote branch 설정
     - 처음 인증 에러가 나면 : git credential -cache exit
   </small>
-  
 </details>
-
-
-
-
-
