@@ -161,7 +161,17 @@
     } else {<br>
       System.out.println(num + " is an odd number.");<br>
     }
-    
+    if (num < 10) {<br>
+			System.out.println(num + "은 한 자리 숫자입니다.");<br>
+	 }<br>
+		elseif (num < 100) { <br>
+			System.out.println(num + "은 두 자리 숫자입니다.");<br>
+	 }<br>
+		else if (num < 1000) {<br>
+			System.out.println(num + "은 세 자리 숫자입니다.");<br>
+	 }<br><br>
+
+ 
 
   
 
