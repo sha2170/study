@@ -111,7 +111,7 @@
 <details>
   <summary><h5><strong>JAVA</strong></h5></summary>
 
-  <small>
+  
   **JAVA**<br>
 
   
