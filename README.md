@@ -171,6 +171,25 @@
 			System.out.println(num + "은 세 자리 숫자입니다.");<br>
 	 }<br><br>
 
+  Switch문<br>
+  	- switch문의 변수는 프리미티브 타입이어야 함<br><br>
+  switch(num) {<br>
+	case 1 : System.out.println("일");<br>
+ 		break;<br>
+	case 2 : System.out.println("이");<br>
+ 		break;<br>
+	default:<br>
+ 		System.out.println("아무것도 아님");<br>
+	 	break;<br>
+	 }<br><br>
+
+ 반복문<br>
+ 	- for : 고정된 횟수만큼 사용<br>
+	* for(초기식; 조건식; 증감식)<br>
+ 	- while문 : 조건식이 참인동안 반복<br>
+	- do~while문 : 코드 블록을 먼저 실행하고, 조건이 참이면 반복문 실행<br><br>
+ 
+
  
 
   
