@@ -139,14 +139,14 @@
         char ch = '3';<br>
     - 논리형 | true/false<br>
         boolean isStudent = true;<br> 
-  System.out.println("Age: " + age);
-    > 결과 : 24
+  System.out.println("Age: " + age);<br>
+    > 결과 : 24<br>
 
   명시적 형 변환(타입 캐스팅) : 큰 타입에서 작은 타입으로 수동 변환<br>
     double pi = 3.14;<br>
     int truncatedPi = (int) pi;<br>
-    System.out.println("pi: "+ pi+", truncatedPi: " + truncatedPi);
-      > 결과 : pi: 3.14, truncatedPi: 3
+    System.out.println("pi: "+ pi+", truncatedPi: " + truncatedPi);<br>
+      > 결과 : pi: 3.14, truncatedPi: 3<br>
 
   연산자<br>
     - 산술연산자 : +, -, *, /<br>
@@ -156,10 +156,10 @@
   수를 입력받아 홀수인지 짝수인지 판별하는 프로그램<br>
     System.out.print("Enter number: ");<br>
     int num = sc.nextInt();<br>
-    if (num % 2 == 0) {
-      System.out.println(num + " is an even number.");
-    } else {
-      System.out.println(num + " is an odd number.");
+    if (num % 2 == 0) {<br>
+      System.out.println(num + " is an even number.");<br>
+    } else {<br>
+      System.out.println(num + " is an odd number.");<br>
     }
     
 
