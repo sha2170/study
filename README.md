@@ -2,7 +2,7 @@
 
 ### **📝 기초**
 <details>
-  <summary style="margin-bottom: -10px;"><h5><strong>Git과 Github</strong></h5></summary>
+  <summary><h5><strong>Git과 Github</strong></h5></summary>
   
   <small>
   **Git**<br>
@@ -106,13 +106,13 @@
     - 처음 인증 에러가 나면 : git credential -cache exit<br>
   </small>
 </details>
+
+
 <details>
-  <summary style="margin-top: -10px;"><h5><strong>JAVA</strong></h5></summary>
-  
+  <summary><h5><strong>JAVA</strong></h5></summary>
 
   <small>
   **JAVA**<br>
 
   
 </details>
-
