@@ -112,7 +112,60 @@
   <summary><h5><strong>JAVA</strong></h5></summary>
 
   
+  <small>
   **JAVA**<br>
+
+  줄바꿈<br>
+    - System.out.println : 줄바꿈 O<br>
+    - System.out.print : 줄바꿈 X<br><br>
+
+  주석 처리<br>
+    - 짧은 주석 : //<br>
+    - 긴 주석 : /* */<br><br>
+
+  메서드<br>
+    - nextInt() : 정수를 가져오는 메서드<br>
+    - nextDouble() : 실수를 가져오는 메서드<br><br>
+
+  변수 : 데이터를 저장하는 메모리 공간, 선언과 초기화<br>
+  데이터타입<br>
+    - 정수형<br>
+        int age = 24;<br>
+        long population = 890000000000L;<br>
+    - 실수형<br>
+        double height = 169.4;<br>
+        float weight = 70.5f;<br>
+    - 문자형<br>
+        char ch = '3';<br>
+    - 논리형 | true/false<br>
+        boolean isStudent = true;<br> 
+  System.out.println("Age: " + age);<br>
+    > 결과 : 24<br><br>
+
+  명시적 형 변환(타입 캐스팅) : 큰 타입에서 작은 타입으로 수동 변환<br>
+    double pi = 3.14;<br>
+    int truncatedPi = (int) pi;<br><br>
+
+    System.out.println("pi: "+ pi+", truncatedPi: " + truncatedPi);<br>
+      > 결과 : pi: 3.14, truncatedPi: 3<br><br>
+
+  연산자<br>
+    - 산술연산자 : +, -, *, /<br>
+    - 비교연산자 : ==, !=, >, <, <=, >=<br>
+    - 논리연산자 : &&, ||, !<br><br>
+
+  수를 입력받아 홀수인지 짝수인지 판별하는 프로그램<br>
+    System.out.print("Enter number: ");<br>
+    int num = sc.nextInt();<br><br>
+
+    if (num % 2 == 0) {<br>
+      System.out.println(num + " is an even number.");<br>
+    } else {<br>
+      System.out.println(num + " is an odd number.");<br>
+    }<br><br>
+    
+
+  
 
   
 </details>
