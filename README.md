@@ -2,7 +2,7 @@
 
 ### **📝 기초**
 <details>
-  <summary><h5><strong>Git과 Github</strong></h5></summary>
+  <summary style="margin-bottom: -10px;"><h5><strong>Git과 Github</strong></h5></summary>
   
   <small>
   **Git**<br>
@@ -107,7 +107,8 @@
   </small>
 </details>
 <details>
-  <summary><h5><strong>JAVA</strong></h5></summary>
+  <summary style="margin-top: -10px;"><h5><strong>JAVA</strong></h5></summary>
+  
 
   <small>
   **JAVA**<br>
