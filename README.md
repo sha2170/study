@@ -143,11 +143,10 @@
     > 결과 : 24
 
   명시적 형 변환(타입 캐스팅) : 큰 타입에서 작은 타입으로 수동 변환<br>
-    double pi = 3.14;<br>
-    int truncatedPi = (int) pi;<br><br>
-
-    System.out.println("pi: "+ pi+", truncatedPi: " + truncatedPi);<br>
-      > 결과 : pi: 3.14, truncatedPi: 3<br><br>
+    double pi = 3.14;
+    int truncatedPi = (int) pi;
+    System.out.println("pi: "+ pi+", truncatedPi: " + truncatedPi);
+      > 결과 : pi: 3.14, truncatedPi: 3
 
   연산자<br>
     - 산술연산자 : +, -, *, /<br>
@@ -157,7 +156,6 @@
   수를 입력받아 홀수인지 짝수인지 판별하는 프로그램<br>
     System.out.print("Enter number: ");
     int num = sc.nextInt();
-
     if (num % 2 == 0) {
       System.out.println(num + " is an even number.");
     } else {
