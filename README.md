@@ -138,7 +138,7 @@
     - 문자형<br>
         char ch = '3';<br>
     - 논리형 | true/false<br>
-        boolean isStudent = true;<br> 
+        boolean isStudent = true;<br> <br>
   System.out.println("Age: " + age);<br>
     > 결과 : 24<br>
 
@@ -146,14 +146,14 @@
     double pi = 3.14;<br>
     int truncatedPi = (int) pi;<br>
     System.out.println("pi: "+ pi+", truncatedPi: " + truncatedPi);<br>
-      > 결과 : pi: 3.14, truncatedPi: 3<br>
+      > 결과 : pi: 3.14, truncatedPi: 3<br><br>
 
   연산자<br>
     - 산술연산자 : +, -, *, /<br>
     - 비교연산자 : ==, !=, >, <, <=, >=<br>
     - 논리연산자 : &&, ||, !<br><br>
 
-  수를 입력받아 홀수인지 짝수인지 판별하는 프로그램<br>
+  수를 입력받아 홀수인지 짝수인지 판별하는 프로그램<br><br>
     System.out.print("Enter number: ");<br>
     int num = sc.nextInt();<br>
     if (num % 2 == 0) {<br>
