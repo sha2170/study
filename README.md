@@ -188,11 +188,56 @@
 	* for(초기식; 조건식; 증감식)<br>
  	- while문 : 조건식이 참인동안 반복<br>
 	- do~while문 : 코드 블록을 먼저 실행하고, 조건이 참이면 반복문 실행<br><br>
- 
+</details>
 
- 
+<details>
+	<summary><h5><strong>프리미티브 타입 | 레퍼런스 타입</strong></h5></summary>
 
-  
+ <small>
+ 	변수 : 데이터를 보관하는 장소(memory)<br>
+	- primitive 타입<br>
+ 			- 기본적인 데이터 타입(int/float 등)<br>
+			- 값 자체를 저장<br>
+	- reference 타입<br>
+ 			- 객체나 배열 같은 데이터 구조의 참조(주소)를 저장<br>
+			- String, 객체<br>
+	- 변수는 사용 전에 반드시 선언되어 있어야함
+ 	* 선언이란, '이름', '타입'을 지정하는 것<br><br>
 
+ primitive 타입<br>
+ 	- 8가지 기본 데이터 타입<br>
+		1. byte(1byte) : 정수<br>
+		2. short(2bytes) : 정수<br>
+		3. int(4bytes) : 정수<br>
+		4. long(8bytes) : 정수<br>
+		5. float(4bytes) : 실수<br>
+		6. double(8bytes) : 실수<br>
+		7. char(2bytes) : 문자 하나<br>
+		8. boolean (not defined) : true, false<br><br>
+
+ 	- 기본 값을 가짐 | 정수 0, 실수 0.0 <br>
+	- 값에 직접 접근하기 때문에 연산 속도가 빠름<br>
+ 	- 단순한 값을 저장하는 데 사용 | 추가적인 메서드나 속성을 가지지 않음<br><br>
+
+reference 타입<br>
+	- String(문자열) 포함 그 외 나머지 모두<br>
+ 	- reference 타입의 변수의 기본값은 항상 "NULL" | NULL은 어떤 객체도 참조하고 있지 않음을 의미<br>
+	- 메모리 주소를 통해 값에 접근 | primitive 타입에 비해 상대적으로 접근속도가 느림<br>
+ 	- 객체이므로 메서드와 속성을 포함<br>
+		 * 더 복잡한 동작화 데이터 관리가 가능<br>
+	 	 * 메서드와 속성에 접근하기 위해서 멤버 연산자(.)를 사용<br><br>
+
+* Java는 primitive 타입과 reference 타입 간의 변환을 위해 오토박싱과 언박싱을 제공함<br><br>
+
+오토박싱(autoboxing)<br>
+	- primitive 타입의 값을 해당하는 wrapper class 객체로 자동 변환하는 과정<br>
+ 	- Integer reflnteger = 5;<br>
+	- primitive 값 5가 Integer 객체로 자동 변환<br><br>
+
+언박싱(unboxing)<br>
+	- wrapper class 객체에서 primitive 타입의 값을 자동으로 추출하는 과정<br>
+ 	- int primitiveInt = reflnteger;<br>
+	- Integer 객체를 다시 기본형 int로 자동 변환<br><br>
+	
   
 </details>
