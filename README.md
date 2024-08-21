@@ -113,7 +113,7 @@
 
   
   <small>
-  **JAVA**<br>
+  **JAVA**<br><br>
 
   줄바꿈<br>
     - System.out.println : 줄바꿈 O<br>
@@ -139,8 +139,8 @@
         char ch = '3';<br>
     - 논리형 | true/false<br>
         boolean isStudent = true;<br> 
-  System.out.println("Age: " + age);<br>
-    > 결과 : 24<br><br>
+  System.out.println("Age: " + age);
+    > 결과 : 24
 
   명시적 형 변환(타입 캐스팅) : 큰 타입에서 작은 타입으로 수동 변환<br>
     double pi = 3.14;<br>
@@ -155,14 +155,14 @@
     - 논리연산자 : &&, ||, !<br><br>
 
   수를 입력받아 홀수인지 짝수인지 판별하는 프로그램<br>
-    System.out.print("Enter number: ");<br>
-    int num = sc.nextInt();<br><br>
+    System.out.print("Enter number: ");
+    int num = sc.nextInt();
 
-    if (num % 2 == 0) {<br>
-      System.out.println(num + " is an even number.");<br>
-    } else {<br>
-      System.out.println(num + " is an odd number.");<br>
-    }<br><br>
+    if (num % 2 == 0) {
+      System.out.println(num + " is an even number.");
+    } else {
+      System.out.println(num + " is an odd number.");
+    }
     
 
   
