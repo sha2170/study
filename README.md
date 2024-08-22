@@ -5,7 +5,7 @@
   <summary><h5><strong>Git과 Github</strong></h5></summary>
   
   <small>
-  **Git**<br>
+  ** Git **<br>
     - 버전 제어 시스템<br><br>
 
   역할 <br>
@@ -113,7 +113,7 @@
 
   
   <small>
-  **JAVA**<br><br>
+  ** JAVA **<br><br>
 
   줄바꿈<br>
     - System.out.println : 줄바꿈 O<br>
@@ -244,7 +244,7 @@ reference 타입<br>
 	<summary><h5><strong>배열과 반복문</strong></h5></summary>
 
  <small>
- **배열**<br>
+ ** 배열 **<br>
   - 동일한 타입의 데이터를 연속적으로 저장하는 데이터 구조<br>
   - 배열의 변수는 참조형 변수(래퍼런스 타입)<br>
   - 인덱스와 값을 일대일 대응해 관리하는 자료구조<br>
@@ -287,6 +287,19 @@ reference 타입<br>
   	- 매트릭스, 테이블 데이터, 그리드와 같은 복잡한 데이터 구조를 효율적으로 표현 가능<br>
    	- 인덱스 접근 | [행 인덱스][열 인덱스]<br>
     		int[][] arr = {{1,2,3},{4,5,6}}; | 2행 3열의 2차원 배열<br><br>
+
+** java.util.arrays 클래스 **<br>
+	- 배열을 다루기 위한 다양한 메서드들이 존재<br>
+ 	- sort(array) : 배열 요소를 오름차순으로 정렬<br>
+  	- binarySearch(array,key) : 정렬된 배열에서 지정된 값의 인덱스를 이진검색 알고리즘을 사용해 찾음<br>
+   	- CopyOf(originalArray, newLength) : 지정된 길이만큼 새로운 배열로 복사<br>
+    	- equals(arr1,arr2) : 같은지 비교<br>
+     	- fill(arr, value) : 배열의 모든 요소를 특정 값으로 채움<br>
+      	- toString(arr) : 배열의 요소를 문자열 형태로 반환하여 출력하기 쉽게 함<br>
+       	- deepToString(arr) : 다차원 배열의 요소를 문자열 형태로 반환하여 출력하기 쉽게 함<br>
+	- deepEquals(arr1,arr2) : 다차원 배열의 내용이 같은지 깊은 비교<br><br>
+ 	
+
      
      
 	  
