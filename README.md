@@ -238,6 +238,70 @@ reference 타입<br>
 	- wrapper class 객체에서 primitive 타입의 값을 자동으로 추출하는 과정<br>
  	- int primitiveInt = reflnteger;<br>
 	- Integer 객체를 다시 기본형 int로 자동 변환<br><br>
+</details>
+
+<details>
+	<summary><h5><strong>배열과 반복문</strong></h5></summary>
+
+ <small>
+ **배열**<br>
+  - 동일한 타입의 데이터를 연속적으로 저장하는 데이터 구조<br>
+  - 배열의 변수는 참조형 변수(래퍼런스 타입)<br>
+  - 인덱스와 값을 일대일 대응해 관리하는 자료구조<br>
+  - 어떤 위치에 있는 데이터든 한 번에 접근 가능<br>
+  - 배열의 크기는 생성 시에 결정, 이후 변경 불가능<br>
+  - 순차적 접근 / 임의 접근 모두 가능<br><br>
+
+배열 선언 : 타입[] 변수명;<br>
+  	    int[] numbers; | 정수형 배열 선언<br><br>
+
+정적 초기화<br>
+  	- 배열을 생성하면서 동시에 초기값을 지정<br>
+   	- int[] numbers = {2, 4, 6, 8, 10}; | 선언과 동시에 초기화<br>
+동적 초기화<br>
+  	- 배열을 생성할 때 크기만 지정, 이후에 각 요소에 값을 할당<br>
+   	- String[] names = new String[5]; | 선언과 동시에 초기화<br>
+     	- String[] names; | 선언<br>
+          names = new String[5]; | 초기화<br><br>
+
+배열의 길이<br>
+   	- .length 속성을 통해 배열의 길이(요소의 길이)를 알 수 있음<br>
+    	- numbers.length<br><br>
+
+배열 요소에 접근 및 수정<br>
+	- 접근 : 인덱스 사용해서 배열의 특정 요소에 접근<br>
+ 		인덱스는 0부터 시작 | numbers[0]<br>
+   	- 수정 : 특정 인덱스 요소에 새로운 값을 할당해서 배열의 요소를 수정<br>
+    		numbers[0] = 1;<br><br>
+
+배열의 요소 순회<br>
+	- for 반복문 : for 반복문을 사용해서 배열의 모든 요소 순회<br>
+ 		      for(int i=0; i<numbers.length; i++)<br>
+	 		{ numbers[i] = i; }<br>
+    	- 향상된 for문 (for-each문)<br>
+ 		      for(int num:numbers)<br>
+	 		{ num }<br><br>
+2차원 배열<br>
+	- 행과 열을 가진 테이블 형태의 데이터 구조<br>
+ 	- 배열의 배열로 구현<br>
+  	- 매트릭스, 테이블 데이터, 그리드와 같은 복잡한 데이터 구조를 효율적으로 표현 가능<br>
+   	- 인덱스 접근 | [행 인덱스][열 인덱스]<br>
+    		int[][] arr = {{1,2,3},{4,5,6}}; | 2행 3열의 2차원 배열<br><br>
+     
+     
+	  
 	
+
   
+  
+
+
+
+
+
+
+
+
+
+   
 </details>
