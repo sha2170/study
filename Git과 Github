@@ -1,1 +1,289 @@
+# ☁️STUDY☁️
+
+
+  ** Git **
+    - 버전 제어 시스템
+
+  역할 
+    - repositories를 사용하여 프로젝트 관리
+    - 로컬 복사본에서 작업하기 위한 프로젝트 clone
+    - staging / commit
+    - branch / merge
+    - pull
+    - push
+
+  작업 과정
+    1. 폴더에서 Git 초기화 (init) > repository 만듦
+    2. 파일이 변경/추가/삭제 > 수정
+    3. stage에 추가할 수정된 파일 선택
+    4. staging된 파일 commit
+
+  Git을 사용하는 이유
+    - 개발자의 70% 이상이 사용중
+    - 어디서나 협업 가능
+    - 프로젝트 전체 내역 보기 가능
+    - 이전 버전으로 돌아가기 가능
+
+  Git 버전 확인 : git --version
+  DefaultBranch 확인 : git config --get init.defaultBranch
+  DefaultBranch 변경 : git config --global init.defaultBranch main
+
+  Git 설정 | user.name ,  user.email
+    - 로컬의 모든 저장소에 대한 사용자 이름과 이메일 설정
+    - git config --global user.name "사용자 이름"
+    - git config --global user.email "사용자 이메일"
+
+  mkdir | make directory 
+    - 새로운 디렉토리(폴더)를 생성하는 명령어
+    - 현재 작업 중인 디렉토리 또는 지정된 경로에 새로운 디렉토리 생성
+    - mkdir workspace
+    
+  cd | change directory
+    - 현재 작업 디렉토리를 변경하는 명령어
+    - 터미널에서 작업할 디렉토리 이동
+    - cd workspace
+
+  Git 초기화 : git init
+  Git 새파일 추가
+    - 빈 Repo에 파일 추가되면 모든 파일 추적 불가
+    - Git에서 추적하도록 하려면 파일 staging / staging 환경에 추가
+  Git 확인 : git status
+
+  Git Staging 환경
+    - 작업하는 동안 파일 추가/편집/제거 가능
+    - 작업의 일부를 완료할 때마다 Staging 환경에 추가해야함
+    - Staging된 파일은 작업 중인 저장소에 commit할 준비가 된 파일
+
+  git 폴더에 저장 > staging 환경에 추가 > commit
+  staging 환경에 추가 : git add 파일명
+  현재 디렉터리에 모든 파일을 staging 환경에 추가 : git add --all
+
+  Git Commit
+    - commit해야 진행 상황과 변경 사항 추적 가능
+    - commit할 때 commit message 포함 명확하게
+    - git commit -m "메시지 내용"
+
+  git status --short
+    - ?? : 추적되지 않은 파일
+    - A : 추가된 파일
+    - M : 수정된
+    - D : 삭제된
+
+  git commit -a -m "커밋 메시지"
+    - staging 환경 건너뛰고 바로 커밋 가능
+    - 권장하지 않음
+
+  커밋 로그 확인 : git log
+
+  Git 도움말
+    - git 명령어 -help : 특정 명령에 대해
+    - git 명령어 --all : 가능한 모든 명령 보기
+        - 터미널 목록보기에 갇히면, shift+G (목록끝 이동), q키로 종료
+
+  Git Branch
+    - 메인 repo의 새로운/별도의 버전
+    - main 브랜치에 영향을 주지 않고 프로젝트의 다양한 부분 작업
+    - 작업이 완료되면 기본 프로젝트와 병합 가능
+    - 작업 중인 프로젝트를 방해하거나 망가뜨리고 싶지 않을 때 : 새로운 branch 만들어서 작업
+        : git branch 브랜치명
+    - branch 확인 : git branch
+    - branch 변경(checkout) : git checkout 브랜치명
+    - 해당 branch가 없으면 새 branch 생성하고 이동 : git checkout -b 브랜치명
+
+  Branch 병합 (Merge)
+    - 메인 branch에서 작업
+    - git merge "병합할 branch명"
+    - 병합 후 임시 브런치 삭제 : git branch -d 브랜치명
+
+  git remote add origin 리모트repoURL
+
+  git push --set-upstream origin main
+    - main 브랜치를 originURL에 push, 기본 remote branch 설정
+    - 처음 인증 에러가 나면 : git credential -cache exit
+
+
+
+
+  
+
+  ** JAVA **
+
+  줄바꿈
+    - System.out.println : 줄바꿈 O
+    - System.out.print : 줄바꿈 X
+
+  주석 처리
+    - 짧은 주석 : //
+    - 긴 주석 : /* */
+
+  메서드
+    - nextInt() : 정수를 가져오는 메서드
+    - nextDouble() : 실수를 가져오는 메서드
+
+  변수 : 데이터를 저장하는 메모리 공간, 선언과 초기화
+  데이터타입
+    - 정수형
+        int age = 24;
+        long population = 890000000000L;
+    - 실수형
+        double height = 169.4;
+        float weight = 70.5f;
+    - 문자형
+        char ch = '3';
+    - 논리형 | true/false
+        boolean isStudent = true;
+  System.out.println("Age: " + age);
+    > 결과 : 24
+
+  명시적 형 변환(타입 캐스팅) : 큰 타입에서 작은 타입으로 수동 변환
+    double pi = 3.14;
+    int truncatedPi = (int) pi;
+    System.out.println("pi: "+ pi+", truncatedPi: " + truncatedPi);
+      > 결과 : pi: 3.14, truncatedPi: 3
+
+  연산자
+    - 산술연산자 : +, -, *, /
+    - 비교연산자 : ==, !=, >, <, <=, >=
+    - 논리연산자 : &&, ||, !
+
+  수를 입력받아 홀수인지 짝수인지 판별하는 프로그램
+    System.out.print("Enter number: ");
+    int num = sc.nextInt();
+    if (num % 2 == 0) {
+      System.out.println(num + " is an even number.");
+    } else {
+      System.out.println(num + " is an odd number.");
+    }
+    if (num < 10) {
+			System.out.println(num + "은 한 자리 숫자입니다.");
+	 }
+		elseif (num < 100) { 
+			System.out.println(num + "은 두 자리 숫자입니다.");
+	 }
+		else if (num < 1000) {
+			System.out.println(num + "은 세 자리 숫자입니다.");
+	 }
+
+  Switch문
+  	- switch문의 변수는 프리미티브 타입이어야 함
+  switch(num) {
+	case 1 : System.out.println("일");
+ 		break;
+	case 2 : System.out.println("이");
+ 		break;
+	default:
+ 		System.out.println("아무것도 아님");
+	 	break;
+	 }
+
+ 반복문
+ 	- for : 고정된 횟수만큼 사용
+	* for(초기식; 조건식; 증감식)
+ 	- while문 : 조건식이 참인동안 반복
+	- do~while문 : 코드 블록을 먼저 실행하고, 조건이 참이면 반복문 실행
+
+
+ <small> 	변수 : 데이터를 보관하는 장소(memory)
+	- primitive 타입
+ 			- 기본적인 데이터 타입(int/float 등)
+			- 값 자체를 저장
+	- reference 타입
+ 			- 객체나 배열 같은 데이터 구조의 참조(주소)를 저장
+			- String, 객체
+	- 변수는 사용 전에 반드시 선언되어 있어야함
+ 	* 선언이란, '이름', '타입'을 지정하는 것
+
+ primitive 타입
+ 	- 8가지 기본 데이터 타입
+		1. byte(1byte) : 정수
+		2. short(2bytes) : 정수
+		3. int(4bytes) : 정수
+		4. long(8bytes) : 정수
+		5. float(4bytes) : 실수
+		6. double(8bytes) : 실수
+		7. char(2bytes) : 문자 하나
+		8. boolean (not defined) : true, false
+
+ 	- 기본 값을 가짐 | 정수 0, 실수 0.0
+	- 값에 직접 접근하기 때문에 연산 속도가 빠름
+ 	- 단순한 값을 저장하는 데 사용 | 추가적인 메서드나 속성을 가지지 않음
+
+reference 타입
+	- String(문자열) 포함 그 외 나머지 모두
+ 	- reference 타입의 변수의 기본값은 항상 "NULL" | NULL은 어떤 객체도 참조하고 있지 않음을 의미
+	- 메모리 주소를 통해 값에 접근 | primitive 타입에 비해 상대적으로 접근속도가 느림
+ 	- 객체이므로 메서드와 속성을 포함
+		 * 더 복잡한 동작화 데이터 관리가 가능
+	 	 * 메서드와 속성에 접근하기 위해서 멤버 연산자(.)를 사용
+
+* Java는 primitive 타입과 reference 타입 간의 변환을 위해 오토박싱과 언박싱을 제공함
+
+오토박싱(autoboxing)
+	- primitive 타입의 값을 해당하는 wrapper class 객체로 자동 변환하는 과정
+ 	- Integer reflnteger = 5;
+	- primitive 값 5가 Integer 객체로 자동 변환
+
+언박싱(unboxing)
+	- wrapper class 객체에서 primitive 타입의 값을 자동으로 추출하는 과정
+ 	- int primitiveInt = reflnteger;
+	- Integer 객체를 다시 기본형 int로 자동 변환
+
+
+
+
+ ** 배열 **
+  - 동일한 타입의 데이터를 연속적으로 저장하는 데이터 구조
+  - 배열의 변수는 참조형 변수(래퍼런스 타입)
+  - 인덱스와 값을 일대일 대응해 관리하는 자료구조
+  - 어떤 위치에 있는 데이터든 한 번에 접근 가능
+  - 배열의 크기는 생성 시에 결정, 이후 변경 불가능
+  - 순차적 접근 / 임의 접근 모두 가능
+
+배열 선언 : 타입[] 변수명;
+  	    int[] numbers; | 정수형 배열 선언
+
+정적 초기화
+  	- 배열을 생성하면서 동시에 초기값을 지정
+   	- int[] numbers = {2, 4, 6, 8, 10}; | 선언과 동시에 초기화
+동적 초기화
+  	- 배열을 생성할 때 크기만 지정, 이후에 각 요소에 값을 할당
+   	- String[] names = new String[5]; | 선언과 동시에 초기화
+     	- String[] names; | 선언
+          names = new String[5]; | 초기화
+
+배열의 길이
+   	- .length 속성을 통해 배열의 길이(요소의 길이)를 알 수 있음
+    	- numbers.length
+
+배열 요소에 접근 및 수정
+	- 접근 : 인덱스 사용해서 배열의 특정 요소에 접근
+ 		인덱스는 0부터 시작 | numbers[0]
+   	- 수정 : 특정 인덱스 요소에 새로운 값을 할당해서 배열의 요소를 수정
+    		numbers[0] = 1;
+
+배열의 요소 순회
+	- for 반복문 : for 반복문을 사용해서 배열의 모든 요소 순회
+ 		      for(int i=0; i<numbers.length; i++)
+	 		{ numbers[i] = i; }
+    	- 향상된 for문 (for-each문)
+ 		      for(int num:numbers)
+	 		{ num }
+2차원 배열
+	- 행과 열을 가진 테이블 형태의 데이터 구조
+ 	- 배열의 배열로 구현
+  	- 매트릭스, 테이블 데이터, 그리드와 같은 복잡한 데이터 구조를 효율적으로 표현 가능
+   	- 인덱스 접근 | [행 인덱스][열 인덱스]
+    		int[][] arr = {{1,2,3},{4,5,6}}; | 2행 3열의 2차원 배열
+
+** java.util.arrays 클래스 **
+	- 배열을 다루기 위한 다양한 메서드들이 존재
+ 	- sort(array) : 배열 요소를 오름차순으로 정렬
+  	- binarySearch(array,key) : 정렬된 배열에서 지정된 값의 인덱스를 이진검색 알고리즘을 사용해 찾음
+   	- CopyOf(originalArray, newLength) : 지정된 길이만큼 새로운 배열로 복사
+    	- equals(arr1,arr2) : 같은지 비교
+     	- fill(arr, value) : 배열의 모든 요소를 특정 값으로 채움
+      	- toString(arr) : 배열의 요소를 문자열 형태로 반환하여 출력하기 쉽게 함
+       	- deepToString(arr) : 다차원 배열의 요소를 문자열 형태로 반환하여 출력하기 쉽게 함
+	- deepEquals(arr1,arr2) : 다차원 배열의 내용이 같은지 깊은 비교
+ 	
 
