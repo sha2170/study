@@ -1,0 +1,76 @@
+  ** JAVA **
+
+  줄바꿈
+    - System.out.println : 줄바꿈 O
+    - System.out.print : 줄바꿈 X
+
+  주석 처리
+    - 짧은 주석 : //
+    - 긴 주석 : /* */
+
+  메서드
+    - nextInt() : 정수를 가져오는 메서드
+    - nextDouble() : 실수를 가져오는 메서드
+
+  변수 : 데이터를 저장하는 메모리 공간, 선언과 초기화
+  데이터타입
+    - 정수형
+        int age = 24;
+        long population = 890000000000L;
+    - 실수형
+        double height = 169.4;
+        float weight = 70.5f;
+    - 문자형
+        char ch = '3';
+    - 논리형 | true/false
+        boolean isStudent = true;
+  System.out.println("Age: " + age);
+    > 결과 : 24
+
+  명시적 형 변환(타입 캐스팅) : 큰 타입에서 작은 타입으로 수동 변환
+    double pi = 3.14;
+    int truncatedPi = (int) pi;
+    System.out.println("pi: "+ pi+", truncatedPi: " + truncatedPi);
+      > 결과 : pi: 3.14, truncatedPi: 3
+
+  연산자
+    - 산술연산자 : +, -, *, /
+    - 비교연산자 : ==, !=, >, <, <=, >=
+    - 논리연산자 : &&, ||, !
+
+  수를 입력받아 홀수인지 짝수인지 판별하는 프로그램
+    System.out.print("Enter number: ");
+    int num = sc.nextInt();
+    if (num % 2 == 0) {
+      System.out.println(num + " is an even number.");
+    } else {
+      System.out.println(num + " is an odd number.");
+    }
+    if (num < 10) {
+			System.out.println(num + "은 한 자리 숫자입니다.");
+	 }
+		elseif (num < 100) { 
+			System.out.println(num + "은 두 자리 숫자입니다.");
+	 }
+		else if (num < 1000) {
+			System.out.println(num + "은 세 자리 숫자입니다.");
+	 }
+
+  Switch문
+  	- switch문의 변수는 프리미티브 타입이어야 함
+  switch(num) {
+	case 1 : System.out.println("일");
+ 		break;
+	case 2 : System.out.println("이");
+ 		break;
+	default:
+ 		System.out.println("아무것도 아님");
+	 	break;
+	 }
+
+ 반복문
+ 	- for : 고정된 횟수만큼 사용
+	* for(초기식; 조건식; 증감식)
+ 	- while문 : 조건식이 참인동안 반복
+	- do~while문 : 코드 블록을 먼저 실행하고, 조건이 참이면 반복문 실행
+
