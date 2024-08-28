@@ -28,3 +28,9 @@
   - 실행 예외(RuntimeException)
     - 예외 처리 코드를 생략하더라도 컴파일이 되는 예외
     - 예외 처리 코드 작성 필요
+
+1. try ~ catch ~ finally
+
+2. throws
+
+3. 사용자 정의 예외 발생 (throw)
