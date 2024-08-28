@@ -1,0 +1,41 @@
+String 클래스
+  - 문자열 선언 및 초기화 : String str = "value";
+  - 문자열 연결 : + 연산자
+  - 부분 문자열 추출 : subString(int begintIndex, int endIndex)
+  - 문자열 길이 : length()
+  - 문자열 비교 : equals(String anotherString)
+  - 대소문자 변환 : toLowerCase(), toUpperCase()
+  - 포함 여부 확인 : contains(CharSequence s)
+  - 특정 문자의 인덱스 찾기 : indexOf(int ch), indexOf(String str)
+  - 문자열 분할 : split(String regex)
+  - 문자열과 숫자 간 변환 : parseInt(String s), toString(int i)
+  - 문자열 포맷팅 : String.format(String format, Object ... args)
+  - 문자 배열로 변환 : toCharArray()
+
+StringBuilder 클래스
+  - 문자열 더 효율적으로 처리할 수 있도록 설계된 클래스
+  - 문자열을 수정할 때 많은 임시 객체를 생성하지 않아 성능이 우수
+    - 기존 String 객체를 더하는 + 연산자는 문자열을 붙일 때마다 새로운 String 객체를 생성하기 때문에 성능 저하
+    - StringBuilder는 새로운 객체를 생성하는 것이 아니라 기존의 더하기 방식
+  - 문자열 추가, 수정, 삭제 등의 작업이 빈번한 상황에서 유용하게 사용
+  - 선언 : StringBuilder sb = new StringBuilder();
+  - 문자열 붙이기
+    - sb.append("ABCDE");
+    - sb.append("연결:).append("연결");
+  - 사용
+    - String s = sb.toString();
+
+
+  - 문자열 초기화 : StringBuilder() | 빈 StringBuilder 생성
+  - 문자열 초기화 : StringBuilder(String str) | 지정된 문자열을 포함하는 StringBuilder 생성
+  - 문자열 추가 : append() | 문자열, 숫자, 문자, 객체 등 다양한 타입의 데이터를 삽입
+  - 문자열 삽입 : inserf(int offset, ...) | 지정된 위치에 문자열, 숫자, 문자, 객체 등 다양한 타입의 데이터를 삽입
+  - 문자열 부분 삭제 : delete(int start, int end) | 시작 인덱스부터 종료 인덱스 전까지의 문자열 부분을 삭제
+  - 특정 문자 삭제 : deleteCharAt(int index) | 지정된 위치의 문자를 삭제
+  - 문자열 길이 변경 : setLength(int newLength) | StringBuilder의 길이를 지정된 길이로 변경, 길이를 줄이면 내용이 잘리고 늘리면 null문자로 채워짐
+  - 문자열 반전 : reverse() | 문자열의 순서를 반전
+  - 문자열 업데이트 : replace(int start, int end, String str) | 시작 인덱스부터 종료 인덱스 전까지의 문자열을 새로운 문자열로 대체
+  - 특정 위치의 문자 변경 : setCharAt(int index, char ch) | 지정된 위치의 문자를 새로운 문자로 변경
+  - 문자열 길이 조회 : length() | 현재 문자열의 길이를 반환
+  - 문자열로 변환 : toString() | StringBuilder의 내용을 담고 있는 일반 문자열(String)로 변환
+
