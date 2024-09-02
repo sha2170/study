@@ -1,0 +1,35 @@
+리팩토링 (Refactoring)
+  - 외부 기능에는 변화가 없지만 내부적으로 효율적으로 시스템을 재구성하는 것
+  - 관심사에 맞게 프로그램을 효율적으로 구성하고 Spring 원칙에 부합할 수 있게 어플리케이션 구성 가능
+
+관심사와 제어권
+1. 관심사 파악  
+  - 이메일을 발송하는 함수 예제
+
+public void sendEmail(@RequestParam("to") List<String> to, @RequestParam("cc") List<String> cc){
+	String subject = generateSubject(); // 제목 생성
+	String body = generateBody(); // 내용 생성
+	Content subjectContent = new Content().withData(subject);
+	Body bodyContent = new Body().withHtml(new Content().withData(body));
+	Message message = new Message().withSubject(subjectContent).withBody(bodyContent);
+	Destination destination = new Destination(); //받는 사람 구성
+	if(CollectionUtils.isNotEmpty(to)) {
+		destination.withToAddresses(to);
+	}
+	if(CollectionUtils.isNotEmpty(cc)){
+		destination.withCcAddress(cc);
+	}
+	SendEmailRequest sendEmailRequest = new SendEmailRequest().withSource(source).withDestination(destination).withMessage(message);
+	EmailServiceClient emailServiceClient = new EmailServiceClient();
+	emailServiceClient.sendEmail(sendEmailRequest); // 실제 이메일 발송
+}
+
+  - 이메일 메시지 구성 + 이메일 발송
+
+public void sendEmail(SendEmailRequest sendEmailRequest){
+    // 구성된 이메일을 외부로부터 전달 받음
+    EmailServiceClient emailServiceClient = new EmailServiceClient(); 	
+    emailServiceClient.sendEmail(sendEmailRequest); // 실제 이메일 발송 
+}
+
+
