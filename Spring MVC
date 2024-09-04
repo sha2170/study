@@ -1,0 +1,99 @@
+MVC(Model View Controller) 개념
+  - 사용자의 뷰 페이지(View)와 데이터(Model), 이들 상호 간의 흐름을 제어(Control)하는 비즈니스 로직 분리(모듈화)해서 코딩하는 방법
+  - 상호 영향 없이 모듈을 재사용, 확장 가능한 구조적 디자인 패턴
+
+MVC 구조
+  - Model : 상태 정보 처리
+  - View : 프리젠테이션 뷰 (사용자가 보게 될 결과 화면 담당)
+  - Controller : 사용자의 입력(URL)에 대해서 그에 맞는 흐름을 제어(흐름 제어 담당)
+
+MVC 작동
+  1. 클라이언트가 서버로 보내는 요청을 컨트롤러가 받음
+  2. 모델은 상태 정보 및 관련 기능을 제공
+    - 컨트롤러는 이 모델을 통해 사용자의 요청을 처리
+  3. 모델을 사용하여 알맞은 로직을 수행할 후 컨트롤러는 사용자에게 보여줄 뷰를 선택
+    - 선택된 뷰는 사용자에게 알맞은 결과 화면을 보여줌
+
+MVC 특징
+  - 비즈니스 로직을 처리하는 모델과 결과 화면을 보여주는 뷰를 분리
+  - 애플리케이션의 흐름 제어나 사용자의 처리 요청은 컨트롤러에 집중
+  - MVC 패턴을 사용함으로써 유지 보수작업이 간단해지고, 어플리케이션을 쉽게 확장 가능
+
+
+Spring MVC
+1. DispatcherServlet
+  - 클라이언트로부터 요청이 들어오면 DispatcherServlet이 가로챔
+  - 가로챈 정보를 HandlerMapping에게 보내 해당 요청을 처리할 수 있는 적절한 Controller를 찾아냄
+  - 컨트롤러를 찾았다면 해당 컨트롤러로 요청을 보냄 (예 : HelloController)
+  - 컨트롤러는 요청에 대한 처리 후 해당 View 리턴 (예 : hello.jsp)
+  - 이때, 해당 이름(hello)으로 ViewResolver가 찾아내서 처리 결과를 View에 보내줌
+  - 이 결과를 다시 DispatcherServlet에게 보내주고, DispatcherServlet이 최종 결과(hello.jsp)를 다시 클라이언트에게 전송
+
+2. ViewResolver 설정
+  - 컨트롤러가 "hello"를 리턴 > WEB-INF/views/hello.jsp가 리턴됨
+
+
+Controller
+1. RequestMapping | 클라이언트가 서버에 요청할 때, URL, HTTP 메서드, 헤더 등에 대해 정의
+  - String[] value
+    - URL 패턴
+    - 예 : "/hello", "/a", "/login"
+    - 콤마로 구분해서 여러 URL 한꺼번에 쓸 수 있음
+  - RequestMethod[] method
+    - HTTP메서드(GET, POST, PUT, HEAD, OPTIONS, PATCH, DELETE, TRACE)
+    - 여러 개 사용 가능
+    - 기본적으로 GET으로 설정 (변경 가능)
+  - String[] params : 요청 파라미터
+  - String[] headers : HTTP 헤더
+
+2. RequestParam | 클라이언트가 서버로 요청을 보낼 때, 주소 외에 별도의 데이터(Parameter) 형식에 대해 정의
+  - 예 : "/a?a=1&b=2&c=3"? 뒤에 있는 부분에 대한 정의
+    - String value : Parameter 이름 : a, b, c
+    - String name : Parameter 이름(Spring 4.2.0 이후)
+    - boolean required : Parameter가 필수인지 아닌지 여부
+    - String defaultValue : Parameter값이 없을 경우 기본값 지정
+
+3. PathVariable | RequestParam과 마찬가지로 데이터를 전달받기 위한 개념
+  - REST 형식의 주소로 Parameter를 받을 때 사용
+    - /a/()/()처럼 URL 형식으로 값을 전달받기 위한 형식
+  - 객체 형식으로 값을 전달받기 때문에 null일 경우 주의
+
+
+Spring Form 처리
+  - Spring에서 MVC 패턴에 따라 모델 데이터를 삽입하거나 컨트롤러 데이터를 보내는 Form 태그 라이브러리를 제공
+  - Spring Form 태그는 Model 데이터 객체나 참조 데이터(Reference data)들을 화면 상에 쉽게 출력하도록 도와줌
+  - 스프링 폼 태그는 spring-form.tld를 필요로 하므로 jsp파일 상단에 taglib 선언이 되어 있어야함
+    <%@ taglib uri="http://www.springframework.org/tags/form" prefix=”form”%>
+
+Response 처리
+  - @ResponseBody
+    - Spring 컨트롤러에서 Return "hello" 하는 것을 기본적으로 hello.jsp를 찾아서 화면에 보여주라는 뜻
+    - @ResponseBody 어노테이션을 붙인 후 return "hello"를 한다면 String 그대로의 "hello"가 리턴됨
+    - ViewResolver에 의한 View 파일(jsp)이 아닌 순수한 값 자체를 클라이언트에 응답
+
+  - Redirect
+    - Spring 컨트롤러에서 URL에 대한 처리 후 항상 ViewResolver를 통해 view 파일을 보여주지 않음
+    - URL에 대한 처리 후 다른 페이지로 이동할 필요가 있을 때, redirect 기능 이용
+      "redirect:주소"와 같이 입력(리턴)하면 해당 주소로 이동
+
+
+@Controller | 스프링 MVC에서 컨트롤러로 사용되는 클래스 정의
+@RestController | @Controller와 @ResponseBody가 결합된 형태
+                  * RESTful 웹 서비스에서 사용
+@RequestMapping | 요청 URL과 컨트롤러 메서드를 매핑
+@GetMapping | HTTP GET 요청을 처리하는 메서드와 매핑
+@PostMapping | POST 요청
+@PutMapping
+@DeleteMapping
+@RequestParam | HTTP 요청 파라미터를 메서드의 파라미터에 매핑
+@PathVariable | URL 경로의 변수를 메서드의 파라미터에 매핑
+@ModelAttribute | 모델 데이터를 뷰에 전달하거나 폼 데이터를 모델에 바인딩
+@RequestBody | HTTP 요청의 본문을 자바 객체로 변환하여 메서드의 파라미터로 전달
+@ResponseBody | 컨트롤러 메서드가 반환하는 데이터를 뷰 대신 HTTP 응답 본문으로 직접 전송
+@SessionAttributes | 특정 모델 속성을 세션에 저장하도록 지정
+@ExceptionHandler
+@InitBinder
+
+  
+
+  
