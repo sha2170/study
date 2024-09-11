@@ -1,0 +1,26 @@
+스트림(Stream)
+  - Java 8부터 람다를 활용해 배열과 컬렉션을 함수형으로 간단하게 처리할 수 있는 기술
+  - 기존 for문 iterator를 사용하면 코드가 길어져서 -> 코드 간결하게 하기 위해 사용
+
+- 특징
+  1. 원본 데이터 소스를 변경하지 않고 읽기만 함
+  2. 일회용 : 한 번 사용하면 닫혀서 재사용이 불가능
+  3. 최종 연산 전까지 중간 연산을 수행하지 않음
+  4. 작업을 내부 반복으로 처리 : forEach() 매개변수에 대입된 람다식을 데이터 소스의 모든 요소에 적용
+  5. 병렬 처리 쉬움 : 멀티스레드 사용
+  6. 기본형 스트림 제공 : IntStream .sum(), .average()등
+
+- 중간 연산(가공)
+  - Filtering
+  - Mapping
+  - Sorting
+  - 기타연산 : 중복 제거, 크기 제한, 중간 작업결과 확인
+
+- 최종 연산(결과를 만드는)
+  - Calculating : 기본형 타입
+    - .count() , .sum() , min()
+  - Reduction
+  - Collecting
+  - Matching
+  - Iterating (forEach)
+  - Finding
