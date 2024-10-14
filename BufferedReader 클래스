@@ -1,0 +1,46 @@
+  - 버퍼(Buffer)란, 임시 저장 공간을 뜻함
+  - 프로그래밍에서의 버퍼는 CPU와 보조기억장치(HDD) 사이에서 사용되는 임시 저장 공간
+  - 버퍼는 주기억장치(RAM)을 이용해서 보조기억장치보다는 빠르고 CPU의 캐시메모리보다는 느림
+
+Scanner 클래스
+  - 텍스트 파싱을 위한 다양한 메서드 제공
+  - 정규식 사용 가능 : 복잡한 입력 처리 가능
+  - 사용하기 쉽고 직관적
+  - 내부적으로 정규식 처리 -> 대량의 데이터 처리 시 BufferedReader보다 느릴 수 있음
+  - 1024 char만큼의 버퍼
+
+BufferedReader 클래스
+  - 버퍼를 이용하여 빠른 성능 제공 -> 대량의 데이터를 읽을 때 효율적
+  - readLine() 메서드 : 문자열로만 데이터를 읽어 옴 -> 추가적인 파싱 필요
+  - 예외 처리가 강제 -> try ~ catch 블록이 필요
+  - Scanner의 8배 만큼의 버퍼
+    - I/O 호출 횟수가 줌
+  - 파일이나 네트워크로부터 대량의 데이터를 빠르게 읽어야 하는 경우 사용
+    - import java.io.BufferedReader;
+    - import java.io.InputStreamReader;
+    - import java.io.IOException;
+
+클래스 / 메소드 / 리턴타입 / 작동방식
+  - BufferedReader / read() / int / 문자 1개를 읽고 int형으로 변환
+  - BufferedReader / readLine() / String / 한 줄의 문자열을 읽는다
+  - BufferedReader / skip(n) / long / n개의 문자를 스킵하고 넘어간다
+  - BufferedWriter / write(s) / 문자 또는 문자열 s를 출력(줄바꿈은 포함 안됨)
+  - BufferedWriter / newLine() / 빈 줄 작성
+  - BufferedWriter / flush() / 남은 값들 모두 출력
+  - BufferedWriter / close() / 스트림 종료
+
+주의할 점
+  1. 꼭 main 함수 우측에 throws IOException을 해주어 예외 처리를 해주어야 한다
+  2. read()는 문자를 읽어서 그 문자에 해당하는 10진수를 반환한다. 즉, 0~9 사이의 숫자를 입력한다면, 그것들을 문자로 읽어서 ASCII 10진수 int값인 48~57이 반환된다
+  3. Buffer은 항상 비워줘야 하므로 꼭 bw.close() 또는 bw.flush() 꼭 해주어야 한다
+
+정수 입력 받기
+  - 만약 공백이 없는 정수를 입력받기 위해서는 readLine()으로 String 형태로 입력받은 후, parseInt 메소드로 int형 반환을 시켜주어야 한다
+  - int num = Integer.parseInt(br.readLine());
+
+  - 만약 공백이 있는 문자열의 숫자를 정수로 입력받으려면
+    1. split 사용
+    2. StringTokenizer 이용
+
+* 성능 개선하고 싶으시다면, 입력에 DataInputStream 클래스 사용 고려
+  
