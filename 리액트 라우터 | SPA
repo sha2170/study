@@ -1,0 +1,84 @@
+SPA
+  - Single Page Application의 약어
+  - 서버로부터 전체 페이지를 새로 불러오는 대신, 필요한 데이터만을 비동기적으로 요청하고 결과를 페이지에 반영
+  - 리액트를 사용하면 효율적인 SPA 구축 가능
+
+라우팅 
+  - 다른 주소에 다른 화면을 보여주는 것
+
+리액트 라우터(React Router)
+  - 리액트 기반의 어플리케이션에서 라우팅을 구현하기 위한 라이브러리
+  - SPA에서는 페이지 이동 없이 URL을 변경하고, 해당 URL에 맞는 컨텐츠를 동적으로 랜더링해야 함
+  - 리액트 라우터는 이러한 기능을 제공 -> 사용자가 여러 페이지를 자연스럽게 네비게이션할 수 있게 해줌
+  - 리액트 라우터는 내부적으로 브라우저의 History API를 사용하여 URL 변경을 관리하고, 해당 경로에 맞는 컴포넌트를 렌더링하기 때문임
+
+리액트와 리액트 라우터를 활용한 SPA 개발의 장점
+  1. 사용자 경험 향상
+  2. 개발 효율성 증가
+  3. SEO(검색 엔진 최적화) 문제 해결 가능
+      서버 사이드 렌더링 구현 -> 검색 엔진 크롤링 문제 해결
+
+[실습]
+1. 프로젝트 생성 및 리액트 라우터 적용
+  - 프로젝트 생성 : router-tutorial
+      npx create-react-app router-tutorial
+      yarn create react-app router-tutorial
+  - router-tutorial 디렉터리로 이동 후 리액트 라우터 라이브러리 설치
+      cd router-tutorial
+      yarn add react-router-dom (npm install react-router-dom)
+
+프로젝트에 라우터 적용
+  - src/index.js에서 react-router-dom에 내장되어 있는 BrowserRouter라는 컴포넌트를 사용해서 App을 감싸면 됨
+    <BrowserRouter> <App /> </BrowserRouter>
+
+  <Routes><Route> 컴포넌트로 특정 주소에 컴포넌트 연결
+    <Routes>
+      <Route path="경로" element={<컴포넌트 />} />
+      <Route path="경로" element={<컴포넌트 />} />
+    </Routes>
+
+라우트 이동하기 : Link 컴포넌트 이용
+  <Link to="경로"> 링크 이름 </Link>
+  - Link 컴포넌트 역시 a태그 사용하지만, 페이지 새로 불러오는 것을 막고, History API를 통해 브라우저 주소의 경로만 바꾸는 기능이 내장
+
+URL 파라미터와 쿼리
+  - URL 파라미터 
+    - url: /product/1
+    - 스프링 @PathVariable -> /product/{productId}
+    - 리액트 라우터에서는: /product/:productId 와 같이 경로에 :(콜론)을 사용해서 설정
+  import {useParams} from 'react-router-dom';
+  const {파라미터명} = useParams(); // const 변수명 = useParams().파라미터명;
+  - 쿼리 스트링
+    - url: /product?product=1&searchKeyword=productName
+    - 스프링 @RequestParam
+    - URL에서 여러 정보 전달할 때 사용
+    - 페이지네이션이나 필터링 기능 구현할 때 사용
+    - 라우트 설정에서는 Query Parameter를 지정할 필요 없음
+    - 주의 사항
+        1. 쿼리 파라미터를 조회할 때 값을 무조건 문자열 타입
+        2. 필요에 따라 타입 변환해서 사용
+    - useLocation() / useSearchParams() 같은 Hook 사용
+    - useLocation()
+      - location 객체를 반환
+      - location 객체는 라우트로 사용된 컴포넌트에서 props로 전달되며, 웹 APP의 현재 주소에 대한 정보를 지니고 있음
+        - hash : 주소의 #문자열 뒤의 값
+        - pathname : 현재 주소 경로
+        - search : ?를 포함한 쿼리 스트링
+        - state : 페이지로 이동 시 임의로 넣을 수 있는 상태값
+        - key : location 객체의 고유값, 초기값
+          default 페이지가 변경될 때마다 고유의 값이 생성됨
+      - 파싱하는 것이 번거로움
+        - 라우터 v6부터 useSearchParams라는 Hook으로 쿼리 스트링을 쉽게 다룰 수 있음
+    - useSearchParams()
+      - URL의 쿼리 파라미터를 읽고 수정할 수 있는 도구
+      - URLSearchParams 객체를 곧바로 편하게 가져올 수 있는 장점
+  const [쿼리문자열 객체, 쿼리문자열 변경함수] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+useNavigate()
+  - Link 컴포넌트 사용하지 않고 다른 페이지로 이동해야하는 경우, 뒤로가기 등에 사용하는 Hook
+  - React 컴포넌트에서 프로그래밍 방식으로 라우팅을 제어할 수 있게 해주는 도구
+  - React Router v6부터 도입
+  - replace 옵션을 사용하면 페이지를 이동할 때 히스토리를 남기지 않음
+    - { replace : true }
+
